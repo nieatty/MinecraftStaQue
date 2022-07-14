@@ -32,7 +32,7 @@ public class Server
             goto Error;
 
         var handshake = new Packet(0)
-            .WriteVarInt(0)
+            .WriteVarInt(-1)
             .WriteString(".")
             .WriteShort(0)
             .WriteVarInt(1)
