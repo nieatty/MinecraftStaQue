@@ -72,7 +72,7 @@ public class Server
 
     private bool Connect()
     {
-        if (_connection != null)
+        if (_connection != null && _connection.Connected)
             return true;
 
         try
