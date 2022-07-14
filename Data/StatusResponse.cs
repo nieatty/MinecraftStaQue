@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Net;
+using Newtonsoft.Json;
 
 namespace MinecraftStaQue.Data;
 
@@ -36,6 +37,7 @@ public class StatusDescription
 [JsonObject(MemberSerialization.OptIn)]
 public class StatusResponse
 {
+    public IPAddress? Address;
     [JsonProperty("description")] public StatusDescription? Description;
 
     [JsonProperty("favicon")] public string? Favicon;
@@ -44,6 +46,7 @@ public class StatusResponse
     public bool Online;
 
     [JsonProperty("players")] public StatusPlayers? Players;
+    public ushort? Port;
 
     [JsonProperty("previewsChat")] public bool? PreviewsChat;
     public byte[]? Raw;

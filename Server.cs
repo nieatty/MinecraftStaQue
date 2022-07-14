@@ -61,6 +61,9 @@ public class Server
         if (jsonResponse == null)
             goto Error;
 
+        jsonResponse.Address = Ip;
+        jsonResponse.Port = Port;
+        
         return jsonResponse;
 
         Error:
