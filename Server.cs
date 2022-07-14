@@ -14,16 +14,16 @@ public class Server
 
     public Server(IPAddress ip, ushort port)
     {
-        IP = ip;
+        Ip = ip;
         Port = port;
     }
 
-    public IPAddress IP { get; }
+    public IPAddress Ip { get; }
     public ushort Port { get; }
 
     public override string ToString()
     {
-        return $"{IP}:{Port}";
+        return $"{Ip}:{Port}";
     }
 
     public StatusResponse GetStatus()
@@ -48,21 +48,26 @@ public class Server
         Send(status);
 
         var response = Receive();
+
+        Disconnect();
+
         if (response == null)
-            return new StatusResponse
-            {
-                Online = false
-            };
+            goto Error;
 
         var packet = Packet.FromBytes(response);
         if (packet.Id != 0)
-            return new StatusResponse
-            {
-                Online = false
-            };
+            goto Error;
 
-        var JsonResponse = packet.ReadString();
-        return JsonConvert.DeserializeObject<StatusResponse>(JsonResponse) ?? new StatusResponse
+        var jsonRaw = packet.ReadString();
+        var jsonResponse = JsonConvert.DeserializeObject<StatusResponse>(jsonRaw);
+
+        if (jsonResponse == null)
+            goto Error;
+
+        return jsonResponse;
+
+        Error:
+        return new StatusResponse
         {
             Online = false
         };
@@ -77,7 +82,7 @@ public class Server
         {
             _connection = new TcpClient();
             _connection.SendTimeout = Timeout;
-            _connection.Connect(IP, Port);
+            _connection.Connect(Ip, Port);
             return IsConnected();
         }
         catch (Exception)
