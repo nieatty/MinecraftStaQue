@@ -1,5 +1,5 @@
 <div align=center>
-  <img alt="Wordmark 'MinecraftStaQue' next to a picture of the Steak item in Minecraft" src="https://user-images.githubusercontent.com/72025514/178927339-c706995d-3cee-4a82-9897-c9cd65abe2e4.png"/>
+  <img alt="Wordmark 'MinecraftStaQue' next to a picture of the Steak item in Minecraft" src="https://user-images.githubusercontent.com/72025514/178930254-8f13b46d-77a3-4756-a7c1-228314807dbf.png"/>
   <h4>.NET 6 compatible Minecraft Status & Query class.</h4>
 </div>
 
