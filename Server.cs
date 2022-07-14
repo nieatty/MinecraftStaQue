@@ -1,9 +1,9 @@
 ﻿using System.Net;
 using System.Net.Sockets;
-using MinecraftSnQ.Data;
+using MinecraftStaQue.Data;
 using Newtonsoft.Json;
 
-namespace MinecraftSnQ;
+namespace MinecraftStaQue;
 
 public class Server
 {
