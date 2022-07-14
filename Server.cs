@@ -29,10 +29,7 @@ public class Server
     public StatusResponse GetStatus()
     {
         if (!Connect())
-            return new StatusResponse
-            {
-                Online = false
-            };
+            goto Error;
 
         var handshake = new Packet(0)
             .WriteVarInt(0)
