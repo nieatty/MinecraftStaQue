@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinecraftSnQ", "MinecraftSnQ.csproj", "{5D6CAA76-91E0-4B79-8321-D2124718C7DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinecraftStaQue", "MinecraftStaQue.csproj", "{5D6CAA76-91E0-4B79-8321-D2124718C7DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

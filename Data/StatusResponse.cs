@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MinecraftSnQ.Data;
+namespace MinecraftStaQue.Data;
 
 [JsonObject(MemberSerialization.OptIn)]
 public class StatusVersion

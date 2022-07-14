@@ -1,4 +1,4 @@
-﻿namespace MinecraftSnQ.Data;
+﻿namespace MinecraftStaQue.Data;
 
 public class Packet
 {
